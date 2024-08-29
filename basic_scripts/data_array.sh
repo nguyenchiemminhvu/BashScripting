@@ -11,6 +11,31 @@ do
     echo ${file_arr[$i]}
 done
 
+while true
+do
+    read file
+    if [[ $file == "" ]]
+    then
+        break
+    fi
+
+    echo $file
+    file_arr+=($file)
+    echo ${file_arr[@]}
+done
+
+declare -a to_be_removed
+for file in ${file_arr[@]}
+do
+    if ! [[ -e $file ]]
+    then
+        touch $file
+        to_be_removed+=($file)
+    fi
+done
+
+rm ${to_be_removed[@]} && echo "removed ${to_be_removed[@]}"
+
 declare -A person
 person[name]="NCMV"
 person[job]="Programmer"
