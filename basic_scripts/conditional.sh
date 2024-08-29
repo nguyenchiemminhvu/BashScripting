@@ -72,3 +72,11 @@ then
     sleep 1
     rm ${PWD}/temp && echo "remove temp file"
 fi
+
+ping -c 1 127.0.0.1
+case $? in
+    0) echo "ping normal" ;;
+    1) echo "ping failed code 1" ;;
+    2) echo "ping failed code 2" ;;
+    *) echo "what?" ;;
+esac

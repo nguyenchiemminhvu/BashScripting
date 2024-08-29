@@ -24,8 +24,7 @@ do
 done
 echo $s
 
-files=${PWD}/*.sh
-for file in $files
+for file in $(ls *.sh)
 do
     if [[ $file != $0 && -x $file ]] # prevent recursion
     then
