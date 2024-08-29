@@ -34,9 +34,9 @@ do
     fi
 done
 
-rm ${to_be_removed[@]} && echo "removed ${to_be_removed[@]}"
+[[ ${#to_be_removed[@]} -gt 0 ]] && rm ${to_be_removed[@]} && echo "removed ${to_be_removed[@]}"
 
-declare -A person
+declare -A person=(["phone"]="0934359954")
 person[name]="NCMV"
 person[job]="Programmer"
 echo ${person[name]} ${person[job]}
