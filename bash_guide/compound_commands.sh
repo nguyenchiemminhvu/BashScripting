@@ -15,7 +15,17 @@ rm temp.txt
 
 # execute commands in the current process
 {
-    echo $SECONDS
-    sleep 1
-    echo $SECONDS
+    echo `date`
 }
+
+# doing arithmetic
+let a=5+2
+echo $a
+let a++
+echo $a
+
+(( a=a**2 ))
+echo $a
+
+(( a=a/2 ))
+echo $a
