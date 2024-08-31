@@ -40,3 +40,7 @@ grep "string" <<<"This is a multiline string
 it is called a herestring
 you can enter whatever you want here
 and this string will become the input for the grep command above"
+
+# This is pipe
+# Output of the current command being the input of next command
+top -b -n 1 | grep '^ *[0-9]' | awk '{print $1, $9, $10, $12}' | sort -k2 -nr | head -10
