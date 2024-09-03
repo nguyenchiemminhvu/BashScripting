@@ -18,4 +18,6 @@ curl ftp://test.rebex.net/readme.txt --user demo:password
 
 curl -T temp ftp://test.rebex.net/ --user demo:password
 
-curl -u demo:passowrd sftp://test.rebex.net
+curl -u demo:passowrd -T temp sftp://localhost/home/ncmv/study_workspace/
+
+curl -u demo:password sftp://localhost/home/ncmv/study_workspace/temp -O temp
